@@ -38,7 +38,7 @@
 ### 기능4: RSS
 
 ## Deployment Target
-iOS 10.0
+iOS 13.0
 
 ## Author
 GeonHyeong Kim, [geonhyeong.dev@gmail.com](geonhyeong.dev@gmail.com)
