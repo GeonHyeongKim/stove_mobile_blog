@@ -115,7 +115,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="NoticeBoard" id="W97-EN-Ozp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LX7-WT-Q66"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LX7-WT-Q66">
+                            <connections>
+                                <segue destination="qo0-FZ-q3U" kind="presentation" modalPresentationStyle="fullScreen" id="YvW-r0-9X7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9e-Hs-bgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -138,8 +142,75 @@
             </objects>
             <point key="canvasLocation" x="-610" y="253"/>
         </scene>
+        <!--제목-->
+        <scene sceneID="i2q-5J-gS9">
+            <objects>
+                <viewController id="snw-rk-iyZ" customClass="NoticeViewController" customModule="BlogMobile" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sgj-2d-p1o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zC0-ri-UIF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gA6-yf-kVz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zC0-ri-UIF" firstAttribute="leading" secondItem="gA6-yf-kVz" secondAttribute="leading" id="BBc-6a-yW3"/>
+                            <constraint firstItem="zC0-ri-UIF" firstAttribute="trailing" secondItem="gA6-yf-kVz" secondAttribute="trailing" id="F1X-FR-znQ"/>
+                            <constraint firstItem="zC0-ri-UIF" firstAttribute="top" secondItem="sgj-2d-p1o" secondAttribute="top" id="bQV-a8-zc3"/>
+                            <constraint firstAttribute="bottom" secondItem="zC0-ri-UIF" secondAttribute="bottom" id="xxh-Vt-lqm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="제목" id="TVg-3K-jaM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="21i-Vt-gs1">
+                            <connections>
+                                <action selector="close:" destination="snw-rk-iyZ" id="IkM-FC-VMY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oVC-uv-ja2">
+                            <connections>
+                                <action selector="save:" destination="snw-rk-iyZ" id="y1S-nQ-bXU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tvMemo" destination="zC0-ri-UIF" id="GNc-9o-C0W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DaI-tp-h7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2393" y="-271"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fw3-x4-NoV">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5T-1M-9pq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qo0-FZ-q3U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lb4-8C-H5r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="snw-rk-iyZ" kind="relationship" relationship="rootViewController" id="eun-rQ-YFP"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1648" y="-271"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
