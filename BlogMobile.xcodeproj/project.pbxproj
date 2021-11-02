@@ -14,6 +14,8 @@
 		579EB7E027303B41002A157C /* BlogMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7DE27303B41002A157C /* BlogMobile.xcdatamodeld */; };
 		579EB7E227303B43002A157C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579EB7E127303B43002A157C /* Assets.xcassets */; };
 		579EB7E527303B43002A157C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579EB7E327303B43002A157C /* LaunchScreen.storyboard */; };
+		579EB7EE2731114B002A157C /* NoticeBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7ED2731114B002A157C /* NoticeBoard.swift */; };
+		579EB7F027311167002A157C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7EF27311167002A157C /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		579EB7E127303B43002A157C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		579EB7E427303B43002A157C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		579EB7E627303B43002A157C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		579EB7ED2731114B002A157C /* NoticeBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoard.swift; sourceTree = "<group>"; };
+		579EB7EF27311167002A157C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		579EB7D427303B41002A157C /* BlogMobile */ = {
 			isa = PBXGroup;
 			children = (
+				579EB7EC27311082002A157C /* Models */,
 				579EB7D527303B41002A157C /* AppDelegate.swift */,
 				579EB7D727303B41002A157C /* SceneDelegate.swift */,
 				579EB7D927303B41002A157C /* ViewController.swift */,
@@ -68,6 +73,15 @@
 				579EB7DE27303B41002A157C /* BlogMobile.xcdatamodeld */,
 			);
 			path = BlogMobile;
+			sourceTree = "<group>";
+		};
+		579EB7EC27311082002A157C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				579EB7ED2731114B002A157C /* NoticeBoard.swift */,
+				579EB7EF27311167002A157C /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +157,10 @@
 			files = (
 				579EB7DA27303B41002A157C /* ViewController.swift in Sources */,
 				579EB7D627303B41002A157C /* AppDelegate.swift in Sources */,
+				579EB7F027311167002A157C /* User.swift in Sources */,
 				579EB7D827303B41002A157C /* SceneDelegate.swift in Sources */,
 				579EB7E027303B41002A157C /* BlogMobile.xcdatamodeld in Sources */,
+				579EB7EE2731114B002A157C /* NoticeBoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
