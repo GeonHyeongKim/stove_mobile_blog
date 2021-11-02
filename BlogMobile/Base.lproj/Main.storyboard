@@ -169,7 +169,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="제목" id="U38-dS-TZ7">
-                        <barButtonItem key="leftBarButtonItem" title="취소" id="OQi-KG-mli"/>
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="OQi-KG-mli">
+                            <connections>
+                                <action selector="close:" destination="VXZ-CB-B37" id="CJR-fe-bkA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="저장" id="gVL-AC-Iw4"/>
                     </navigationItem>
                 </viewController>
