@@ -29,6 +29,10 @@ class NoticeBoardTableViewController: UITableViewController {
         
         tableView.rowHeight = 100
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 

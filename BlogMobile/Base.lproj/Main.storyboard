@@ -142,7 +142,7 @@
             </objects>
             <point key="canvasLocation" x="-610" y="253"/>
         </scene>
-        <!--제목-->
+        <!--Notice View Controller-->
         <scene sceneID="KXI-OI-eFx">
             <objects>
                 <viewController id="VXZ-CB-B37" customClass="NoticeViewController" customModule="BlogMobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,14 +168,23 @@
                             <constraint firstItem="hkV-05-5UF" firstAttribute="top" secondItem="dag-fE-U3h" secondAttribute="top" id="ufD-fo-oAm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="제목" id="U38-dS-TZ7">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="U38-dS-TZ7">
                         <barButtonItem key="leftBarButtonItem" title="취소" id="OQi-KG-mli">
                             <connections>
                                 <action selector="close:" destination="VXZ-CB-B37" id="CJR-fe-bkA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="저장" id="gVL-AC-Iw4"/>
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="gVL-AC-Iw4">
+                            <connections>
+                                <action selector="save:" destination="VXZ-CB-B37" id="7dB-BP-Kpr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tvNotice" destination="hkV-05-5UF" id="H2r-Uh-15b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pif-e1-05g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
