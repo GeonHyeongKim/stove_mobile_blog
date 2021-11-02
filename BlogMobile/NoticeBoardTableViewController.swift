@@ -8,7 +8,16 @@
 import UIKit
 
 class NoticeBoardTableViewController: UITableViewController {
-
+    
+    let formatter: DateFormatter = { // Closures를 활용
+        let format = DateFormatter()
+        format.dateStyle = .long
+        format.timeStyle = .short
+        format.dateFormat = "MM-dd HH:mm"
+        format.locale = Locale(identifier: "Ko_kr") // 한글표시
+        return format
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +41,7 @@ class NoticeBoardTableViewController: UITableViewController {
 
         // Configure the cell...
         let target = NoticeBoard.dummyNoticeBoardList[indexPath.row]
-        cell.lblDate.text = target.insertDate.description
+        cell.lblDate.text = formatter.string(for: target.insertDate)
         cell.lblUser.text = target.user.name
         cell.lblTitle.text = target.title
         
