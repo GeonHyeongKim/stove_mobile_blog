@@ -9,18 +9,20 @@ import Foundation
 
 struct NoticeBoard: Codable {
     var user: User
+    var title: String
     var contents: String
     var insertDate: Date
 //    var comment: String
     
-    init(contents: String) {
+    init(title: String, contents: String) {
+        self.title = title
         user = User(name: "Stove iOS 개발자", account: "ios_developer")
         self.contents = contents
         insertDate = Date()
     }
     
     static var dummyNoticeBoardList = [
-        NoticeBoard(contents: "Blog1 ☎️"),
-        NoticeBoard(contents: "Blog1 🪙")
+        NoticeBoard(title: "Stove iOS 개발자 되는방법", contents: "Blog1 ☎️"),
+        NoticeBoard(title: "개발자의 길", contents: "Blog2 🪙")
     ]
 }
