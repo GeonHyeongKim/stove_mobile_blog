@@ -117,7 +117,7 @@
                     <navigationItem key="navigationItem" title="NoticeBoard" id="W97-EN-Ozp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LX7-WT-Q66">
                             <connections>
-                                <segue destination="qo0-FZ-q3U" kind="presentation" modalPresentationStyle="fullScreen" id="YvW-r0-9X7"/>
+                                <segue destination="An2-dn-YbW" kind="presentation" modalPresentationStyle="fullScreen" id="4FM-2t-uc8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -143,14 +143,14 @@
             <point key="canvasLocation" x="-610" y="253"/>
         </scene>
         <!--제목-->
-        <scene sceneID="i2q-5J-gS9">
+        <scene sceneID="KXI-OI-eFx">
             <objects>
-                <viewController id="snw-rk-iyZ" customClass="NoticeViewController" customModule="BlogMobile" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sgj-2d-p1o">
+                <viewController id="VXZ-CB-B37" customClass="NoticeViewController" customModule="BlogMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dag-fE-U3h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zC0-ri-UIF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hkV-05-5UF" userLabel="Tv Contents">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -159,52 +159,41 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="gA6-yf-kVz"/>
+                        <viewLayoutGuide key="safeArea" id="HTq-n1-yBb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zC0-ri-UIF" firstAttribute="leading" secondItem="gA6-yf-kVz" secondAttribute="leading" id="BBc-6a-yW3"/>
-                            <constraint firstItem="zC0-ri-UIF" firstAttribute="trailing" secondItem="gA6-yf-kVz" secondAttribute="trailing" id="F1X-FR-znQ"/>
-                            <constraint firstItem="zC0-ri-UIF" firstAttribute="top" secondItem="sgj-2d-p1o" secondAttribute="top" id="bQV-a8-zc3"/>
-                            <constraint firstAttribute="bottom" secondItem="zC0-ri-UIF" secondAttribute="bottom" id="xxh-Vt-lqm"/>
+                            <constraint firstItem="HTq-n1-yBb" firstAttribute="trailing" secondItem="hkV-05-5UF" secondAttribute="trailing" id="7UF-GJ-UBo"/>
+                            <constraint firstAttribute="bottom" secondItem="hkV-05-5UF" secondAttribute="bottom" id="GbW-eq-8nA"/>
+                            <constraint firstItem="hkV-05-5UF" firstAttribute="leading" secondItem="dag-fE-U3h" secondAttribute="leading" id="iFN-LR-unc"/>
+                            <constraint firstItem="hkV-05-5UF" firstAttribute="top" secondItem="dag-fE-U3h" secondAttribute="top" id="ufD-fo-oAm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="제목" id="TVg-3K-jaM">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="21i-Vt-gs1">
-                            <connections>
-                                <action selector="close:" destination="snw-rk-iyZ" id="IkM-FC-VMY"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oVC-uv-ja2">
-                            <connections>
-                                <action selector="save:" destination="snw-rk-iyZ" id="y1S-nQ-bXU"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="제목" id="U38-dS-TZ7">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="OQi-KG-mli"/>
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="gVL-AC-Iw4"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tvMemo" destination="zC0-ri-UIF" id="GNc-9o-C0W"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DaI-tp-h7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pif-e1-05g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="-271"/>
+            <point key="canvasLocation" x="2280" y="-90"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="fw3-x4-NoV">
+        <scene sceneID="dFU-HM-0vm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I5T-1M-9pq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qo0-FZ-q3U" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="An2-dn-YbW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lb4-8C-H5r">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yc5-mU-FOd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="snw-rk-iyZ" kind="relationship" relationship="rootViewController" id="eun-rQ-YFP"/>
+                        <segue destination="VXZ-CB-B37" kind="relationship" relationship="rootViewController" id="z2K-tJ-enP"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SBn-Xu-8C9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648" y="-271"/>
+            <point key="canvasLocation" x="1519" y="-90"/>
         </scene>
     </scenes>
     <resources>
