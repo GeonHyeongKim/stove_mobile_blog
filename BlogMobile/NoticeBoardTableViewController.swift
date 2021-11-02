@@ -18,6 +18,14 @@ class NoticeBoardTableViewController: UITableViewController {
         return format
     }()
     
+    var token: NSObjectProtocol? // 메모리 낭비를 줄임
+    
+    deinit { // 소멸자에서 해제
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +36,11 @@ class NoticeBoardTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         tableView.rowHeight = 100
+        
+        // Observers
+        token = NotificationCenter.default.addObserver(forName: NoticeViewController.newMomoDidInsert, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+            self?.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

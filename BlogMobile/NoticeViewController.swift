@@ -73,16 +73,13 @@ class NoticeViewController: UIViewController {
         let newNotice = NoticeBoard(title: title, contents: notice)
         NoticeBoard.dummyNoticeBoardList.append(newNotice)
         
+        NotificationCenter.default.post(name: NoticeViewController.newNoticeDidInsert, object: nil)
+
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//MARK: - 새 글이 발생시 List update
+extension NoticeViewController {
+    static let newNoticeDidInsert = Notification.Name(rawValue: "newNoticeDidInsert")
 }
