@@ -9,6 +9,8 @@ import UIKit
 
 class NoticeBoardTableViewController: UITableViewController {
     
+    var numbering: Int = 0 // 글 순번
+    
     let formatter: DateFormatter = { // Closures를 활용
         let format = DateFormatter()
         format.dateStyle = .long
@@ -38,6 +40,7 @@ class NoticeBoardTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        numbering = 0
         DataManager.shared.fetchNotice()
         tableView.reloadData()
     }
@@ -65,6 +68,8 @@ class NoticeBoardTableViewController: UITableViewController {
         cell.lblTitle.text = target.title
         cell.lblDate.text = formatter.string(for: target.insertDate)
         cell.lblUser.text = target.user?.name
+        numbering+=1
+        cell.lblNumber.text = String(numbering)
         
         return cell
     }
