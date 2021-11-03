@@ -46,8 +46,8 @@ class DataManager {
         
         // User Entity에 들어갈 관리 객체 생성
         let userObject = UserCD(context: mainContext)
-        userObject.name = "iOS 개발자"
-        userObject.account = "test@gmail.com"
+        userObject.name = User.shared.name
+        userObject.account = User.shared.account
         
         newNotice.user = userObject
         
