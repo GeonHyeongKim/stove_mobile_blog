@@ -83,7 +83,7 @@ class WriteViewController: UIViewController {
         let button =  UIButton(type: .custom)
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
         button.setTitle(title, for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(UIColor(named: "MyLableColor"), for: .normal)
         button.addTarget(self, action: #selector(clickOnTitleButton), for: .touchUpInside)
         navigationItem.titleView = button
     }
