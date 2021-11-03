@@ -221,7 +221,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="xVW-6S-PJQ">
-                        <barButtonItem key="rightBarButtonItem" title="수정" id="yAv-3e-9Z2"/>
+                        <barButtonItem key="rightBarButtonItem" title="수정" id="yAv-3e-9Z2">
+                            <connections>
+                                <segue destination="An2-dn-YbW" kind="presentation" id="b4K-R4-5pv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tvNotice" destination="vZT-ZL-yr3" id="j3z-Z1-5ni"/>
@@ -327,6 +331,9 @@
             <point key="canvasLocation" x="1519" y="-90"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4FM-2t-uc8"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

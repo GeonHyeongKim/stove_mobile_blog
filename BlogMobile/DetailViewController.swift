@@ -21,10 +21,27 @@ class DetailViewController: UIViewController {
         return format
     }()
     
+    var token: NSObjectProtocol? // 메모리 낭비를 줄임
+    
+    deinit { // 소멸자에서 해제
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        token = NotificationCenter.default.addObserver(forName: NoticeViewController.noticeDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+            self?.tvNotice.reloadData()
+        })
+    }
+    
+    // 데이터 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination.children.first as? NoticeViewController {
+            vc.editTarget = notice
+        }
     }
 
 }

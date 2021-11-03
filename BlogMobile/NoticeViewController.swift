@@ -10,12 +10,22 @@ import UIKit
 class NoticeViewController: UIViewController {
 
     @IBOutlet weak var tvNotice: UITextView!
+    var editTarget: NoticeBoard?
+    var originalNoiceContents: String?
     var noticeTitle: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         insertTitleInNavigation("제목")
+        if let notice = editTarget {
+            insertTitleInNavigation(notice.title)
+            tvNotice.text = notice.contents
+            originalNoiceContents = notice.contents
+        } else {
+            insertTitleInNavigation("")
+            tvNotice.text = ""
+        }
     }
     
     func insertTitleInNavigation(_ title: String?) {
@@ -60,7 +70,7 @@ class NoticeViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        guard let notice = tvNotice.text, notice.count > 0 else {  // 글이 입력되지 않았을 경우
+        guard let contents = tvNotice.text, contents.count > 0 else {  // 글이 입력되지 않았을 경우
             alert(message: "글을 입력해주세요")
             return
         }
@@ -69,11 +79,15 @@ class NoticeViewController: UIViewController {
             alert(message: "제목을 입력해주세요")
             return
         }
-        
-        let newNotice = NoticeBoard(title: title, contents: notice)
-        NoticeBoard.dummyNoticeBoardList.append(newNotice)
-        
-        NotificationCenter.default.post(name: NoticeViewController.newNoticeDidInsert, object: nil)
+                
+        // 메모가 입력되었을 경우
+        if var target = editTarget { // 편집
+            target.contents = contents
+            target.insertDate = Date()
+            NotificationCenter.default.post(name: NoticeViewController.noticeDidChange, object: nil)
+        } else { // 새 메모
+            NotificationCenter.default.post(name: NoticeViewController.newNoticeDidInsert, object: nil)
+        }
 
         dismiss(animated: true, completion: nil)
     }
@@ -82,4 +96,5 @@ class NoticeViewController: UIViewController {
 //MARK: - 새 글이 발생시 List update
 extension NoticeViewController {
     static let newNoticeDidInsert = Notification.Name(rawValue: "newNoticeDidInsert")
+    static let noticeDidChange = Notification.Name(rawValue: "noticeDidChange")
 }
