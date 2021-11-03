@@ -20,6 +20,7 @@
 		579EB7FC27313EBC002A157C /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7FB27313EBC002A157C /* NoticeViewController.swift */; };
 		579EB7FE27317620002A157C /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7FD27317620002A157C /* UIViewController+Alert.swift */; };
 		579EB80127317AEF002A157C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB80027317AEF002A157C /* Button.swift */; };
+		579EB80327319AFA002A157C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB80227319AFA002A157C /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		579EB7FB27313EBC002A157C /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		579EB7FD27317620002A157C /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		579EB80027317AEF002A157C /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		579EB80227319AFA002A157C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				579EB7EC27311082002A157C /* Models */,
 				579EB7FA273120F5002A157C /* Table Cell */,
 				579EB7F427311970002A157C /* NoticeBoardTableViewController.swift */,
+				579EB80227319AFA002A157C /* DetailViewController.swift */,
 				579EB7FB27313EBC002A157C /* NoticeViewController.swift */,
 				579EB7DB27303B41002A157C /* Main.storyboard */,
 				579EB7E127303B43002A157C /* Assets.xcassets */,
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				579EB80327319AFA002A157C /* DetailViewController.swift in Sources */,
 				579EB7FE27317620002A157C /* UIViewController+Alert.swift in Sources */,
 				579EB7F527311970002A157C /* NoticeBoardTableViewController.swift in Sources */,
 				579EB7F8273120E7002A157C /* NoticeBoardListTableViewCell.swift in Sources */,
