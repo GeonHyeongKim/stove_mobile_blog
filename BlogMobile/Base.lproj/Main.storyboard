@@ -244,7 +244,7 @@
                         <viewLayoutGuide key="safeArea" id="d6S-Oh-2ZZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Other" image="person" catalog="system" selectedImage="person.fill" id="4l7-xh-DQF"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Other" image="person" catalog="system" selectedImage="person.fill" id="4l7-xh-DQF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCo-uR-PhO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
