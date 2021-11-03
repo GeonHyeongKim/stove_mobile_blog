@@ -38,6 +38,7 @@ class NoticeBoardTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        DataManager.shared.fetchNotice()
         tableView.reloadData()
     }
     
@@ -45,7 +46,7 @@ class NoticeBoardTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
             if let vc = segue.destination as? DetailViewController {
-                vc.notice = NoticeBoard.dummyNoticeBoardList[indexPath.row]
+                vc.notice = DataManager.shared.noticeList[indexPath.row]
             }
         }
     }
@@ -53,17 +54,17 @@ class NoticeBoardTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NoticeBoard.dummyNoticeBoardList.count
+        return DataManager.shared.noticeList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "noticeBoardListTableViewCell", for: indexPath) as! NoticeBoardListTableViewCell
 
         // Configure the cell...
-        let target = NoticeBoard.dummyNoticeBoardList[indexPath.row]
+        let target = DataManager.shared.noticeList[indexPath.row]
         cell.lblTitle.text = target.title
         cell.lblDate.text = formatter.string(for: target.insertDate)
-        cell.lblUser.text = target.user.name
+        cell.lblUser.text = target.user?.name
         
         return cell
     }

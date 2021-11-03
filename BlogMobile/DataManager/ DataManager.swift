@@ -14,6 +14,29 @@ class DataManager {
     private init() {
         
     }
+    // Context : Core Data를 관리
+    var mainContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+    
+    
+    var noticeList = [NoticeCD]()
+    
+    // 메모리에서 데이터 읽어오기
+    func fetchNotice() {
+        let requestNote: NSFetchRequest<NoticeCD> = NoticeCD.fetchRequest()
+        
+        // 정렬
+        let sortByDateDesc = NSSortDescriptor(key: "insertDate", ascending: false) // 내림차순
+        requestNote.sortDescriptors = [sortByDateDesc]
+        
+        do {
+            noticeList = try mainContext.fetch(requestNote)
+        } catch {
+             print(error)
+        }
+    }
+    
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {

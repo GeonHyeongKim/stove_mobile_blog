@@ -10,7 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var tvNotice: UITableView!
-    var notice: NoticeBoard?
+    var notice: NoticeCD?
 
     let formatter: DateFormatter = { // Closures를 활용
         let format = DateFormatter()
@@ -60,7 +60,7 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeUserTableViewCell", for: indexPath)
-            cell.textLabel?.text = notice?.user.name
+            cell.textLabel?.text = notice?.user?.name
             cell.detailTextLabel?.text = formatter.string(from: notice?.insertDate ?? Date())
             return cell
         case 2:

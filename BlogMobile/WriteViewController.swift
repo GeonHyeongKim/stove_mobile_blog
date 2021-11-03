@@ -10,7 +10,7 @@ import UIKit
 class WriteViewController: UIViewController {
 
     @IBOutlet weak var tvNotice: UITextView!
-    var editTarget: NoticeBoard?
+    var editTarget: NoticeCD?
     var originalNoiceContents: String?
     var noticeTitle: String!
     
@@ -80,7 +80,7 @@ class WriteViewController: UIViewController {
         }
                 
         // 메모가 입력되었을 경우
-        if var target = editTarget { // 편집
+        if let target = editTarget { // 편집
             target.contents = contents
             target.insertDate = Date()
             NotificationCenter.default.post(name: WriteViewController.noticeDidChange, object: nil)
