@@ -12,6 +12,7 @@ class WriteViewController: UIViewController {
     @IBOutlet weak var tvNotice: UITextView!
     @IBOutlet weak var toolbar: UIToolbar!
     var editTarget: NoticeCD?
+    var originalNoiceTitle: String?
     var originalNoiceContents: String?
     var noticeTitle: String!
     
@@ -21,12 +22,24 @@ class WriteViewController: UIViewController {
         if let notice = editTarget {
             insertTitleInNavigation(notice.title)
             tvNotice.text = notice.contents
+            originalNoiceTitle = notice.title
             originalNoiceContents = notice.contents
         } else {
             insertTitleInNavigation("제목 없음")
             tvNotice.text = ""
             toolbar.isHidden = true
         }
+        tvNotice.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tvNotice.becomeFirstResponder()
+        navigationController?.presentationController?.delegate = self
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        tvNotice.resignFirstResponder()
+        navigationController?.presentationController?.delegate = nil
     }
     
     func insertTitleInNavigation(_ title: String?) {
@@ -40,10 +53,13 @@ class WriteViewController: UIViewController {
     }
     
     @objc func clickOnTitleButton() {
-        let alert = UIAlertController(title: "제목을 설정해주세요", message: "10자 이내", preferredStyle: .alert)
+        let alert = UIAlertController(title: "제목을 설정해주세요", message: "20자 이내", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "저장", style: .destructive) { [weak self] (action) in
             self?.insertTitleInNavigation(alert.textFields?[0].text)
+            if #available(iOS 13.0, *) { // 제목이 수정 되었을 때,
+                self?.isModalInPresentation = self?.originalNoiceTitle != self?.noticeTitle
+            }
         }
         okAction.isEnabled = false
         
@@ -63,7 +79,7 @@ class WriteViewController: UIViewController {
         let alertController:UIAlertController = self.presentedViewController as! UIAlertController;
         let textField :UITextField  = alertController.textFields![0];
         let addAction: UIAlertAction = alertController.actions[0];
-        addAction.isEnabled = (textField.text?.count)! > 0 && (textField.text?.count)! < 10;
+        addAction.isEnabled = (textField.text?.count)! > 0 && (textField.text?.count)! < 15;
     }
     
     @IBAction func close(_ sender: Any) {
@@ -95,6 +111,7 @@ class WriteViewController: UIViewController {
 
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func deleteNotice(_ sender: Any) {
         let alert = UIAlertController(title: "알림", message: "삭제 확인", preferredStyle: .alert)
         
@@ -117,4 +134,38 @@ extension WriteViewController {
     static let newNoticeDidInsert = Notification.Name(rawValue: "newNoticeDidInsert")
     static let noticeDidChange = Notification.Name(rawValue: "noticeDidChange")
     static let noticeDidDelete = Notification.Name(rawValue: "noticeDidDelete")
+}
+
+//MARK: - UITextViewDelegate
+extension WriteViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if let origin = originalNoiceContents, let edited = textView.text, let originTitle = originalNoiceTitle, let editedTitle = noticeTitle {
+            if #available(iOS 13.0, *) {
+                isModalInPresentation = (origin != edited) || (originTitle != editedTitle)
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
+}
+
+//MARK: - UIAdaptivePresentationControllerDelegate
+extension WriteViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+        let alert = UIAlertController(title: "알림", message: "편집한 내용을 저장할까요?", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "확인", style: .default) { [weak self] (action) in
+            self?.save(action)
+        }
+        
+        alert.addAction(okAction)
+        
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel) { [weak self] (action) in
+            self?.close(action)
+        }
+        
+        alert.addAction(cancleAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
