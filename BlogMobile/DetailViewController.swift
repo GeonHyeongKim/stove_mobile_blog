@@ -32,14 +32,14 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        token = NotificationCenter.default.addObserver(forName: NoticeViewController.noticeDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+        token = NotificationCenter.default.addObserver(forName: WriteViewController.noticeDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
             self?.tvNotice.reloadData()
         })
     }
     
     // 데이터 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination.children.first as? NoticeViewController {
+        if let vc = segue.destination.children.first as? WriteViewController {
             vc.editTarget = notice
         }
     }

@@ -254,7 +254,7 @@
         <!--제목-->
         <scene sceneID="KXI-OI-eFx">
             <objects>
-                <viewController id="VXZ-CB-B37" customClass="NoticeViewController" customModule="BlogMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VXZ-CB-B37" customClass="WriteViewController" customModule="BlogMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dag-fE-U3h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NoticeViewController: UIViewController {
+class WriteViewController: UIViewController {
 
     @IBOutlet weak var tvNotice: UITextView!
     var editTarget: NoticeBoard?
@@ -23,7 +23,7 @@ class NoticeViewController: UIViewController {
             tvNotice.text = notice.contents
             originalNoiceContents = notice.contents
         } else {
-            insertTitleInNavigation("")
+            insertTitleInNavigation("제목을 설정해주세요")
             tvNotice.text = ""
         }
     }
@@ -84,9 +84,9 @@ class NoticeViewController: UIViewController {
         if var target = editTarget { // 편집
             target.contents = contents
             target.insertDate = Date()
-            NotificationCenter.default.post(name: NoticeViewController.noticeDidChange, object: nil)
+            NotificationCenter.default.post(name: WriteViewController.noticeDidChange, object: nil)
         } else { // 새 메모
-            NotificationCenter.default.post(name: NoticeViewController.newNoticeDidInsert, object: nil)
+            NotificationCenter.default.post(name: WriteViewController.newNoticeDidInsert, object: nil)
         }
 
         dismiss(animated: true, completion: nil)
@@ -94,7 +94,7 @@ class NoticeViewController: UIViewController {
 }
 
 //MARK: - 새 글이 발생시 List update
-extension NoticeViewController {
+extension WriteViewController {
     static let newNoticeDidInsert = Notification.Name(rawValue: "newNoticeDidInsert")
     static let noticeDidChange = Notification.Name(rawValue: "noticeDidChange")
 }

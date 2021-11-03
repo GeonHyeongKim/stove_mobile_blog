@@ -17,7 +17,7 @@
 		579EB7F027311167002A157C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7EF27311167002A157C /* User.swift */; };
 		579EB7F527311970002A157C /* NoticeBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7F427311970002A157C /* NoticeBoardTableViewController.swift */; };
 		579EB7F8273120E7002A157C /* NoticeBoardListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7F6273120E7002A157C /* NoticeBoardListTableViewCell.swift */; };
-		579EB7FC27313EBC002A157C /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7FB27313EBC002A157C /* NoticeViewController.swift */; };
+		579EB7FC27313EBC002A157C /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7FB27313EBC002A157C /* WriteViewController.swift */; };
 		579EB7FE27317620002A157C /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7FD27317620002A157C /* UIViewController+Alert.swift */; };
 		579EB80327319AFA002A157C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB80227319AFA002A157C /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		579EB7EF27311167002A157C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		579EB7F427311970002A157C /* NoticeBoardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardTableViewController.swift; sourceTree = "<group>"; };
 		579EB7F6273120E7002A157C /* NoticeBoardListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardListTableViewCell.swift; sourceTree = "<group>"; };
-		579EB7FB27313EBC002A157C /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		579EB7FB27313EBC002A157C /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		579EB7FD27317620002A157C /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		579EB80227319AFA002A157C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +77,7 @@
 				579EB7FA273120F5002A157C /* Table Cell */,
 				579EB7F427311970002A157C /* NoticeBoardTableViewController.swift */,
 				579EB80227319AFA002A157C /* DetailViewController.swift */,
-				579EB7FB27313EBC002A157C /* NoticeViewController.swift */,
+				579EB7FB27313EBC002A157C /* WriteViewController.swift */,
 				579EB7DB27303B41002A157C /* Main.storyboard */,
 				579EB7E127303B43002A157C /* Assets.xcassets */,
 				579EB7E327303B43002A157C /* LaunchScreen.storyboard */,
@@ -191,7 +191,7 @@
 				579EB7F027311167002A157C /* User.swift in Sources */,
 				579EB7D827303B41002A157C /* SceneDelegate.swift in Sources */,
 				579EB7E027303B41002A157C /* BlogMobile.xcdatamodeld in Sources */,
-				579EB7FC27313EBC002A157C /* NoticeViewController.swift in Sources */,
+				579EB7FC27313EBC002A157C /* WriteViewController.swift in Sources */,
 				579EB7EE2731114B002A157C /* NoticeBoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

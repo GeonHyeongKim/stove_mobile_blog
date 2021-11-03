@@ -32,7 +32,7 @@ class NoticeBoardTableViewController: UITableViewController {
         tableView.rowHeight = 100
         
         // Observers
-        token = NotificationCenter.default.addObserver(forName: NoticeViewController.newNoticeDidInsert, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+        token = NotificationCenter.default.addObserver(forName: WriteViewController.newNoticeDidInsert, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
             self?.tableView.reloadData()
         }
     }
