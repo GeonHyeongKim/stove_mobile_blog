@@ -234,7 +234,7 @@
             </objects>
             <point key="canvasLocation" x="1519" y="725"/>
         </scene>
-        <!--Item 2-->
+        <!--Other-->
         <scene sceneID="2PX-m9-qAk">
             <objects>
                 <viewController id="OdU-fs-CMj" sceneMemberID="viewController">
@@ -244,7 +244,7 @@
                         <viewLayoutGuide key="safeArea" id="d6S-Oh-2ZZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="4l7-xh-DQF"/>
+                    <tabBarItem key="tabBarItem" title="Other" image="person" catalog="system" selectedImage="person.fill" id="4l7-xh-DQF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCo-uR-PhO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -381,11 +381,11 @@
             </objects>
             <point key="canvasLocation" x="1519" y="-90"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="KI5-0E-GIk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uL8-kq-nq2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="aji-TE-ol2"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="aji-TE-ol2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ok2-C4-yla">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -405,6 +405,10 @@
         <segue reference="4FM-2t-uc8"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
