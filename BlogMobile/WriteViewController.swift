@@ -17,13 +17,12 @@ class WriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        insertTitleInNavigation("제목")
         if let notice = editTarget {
             insertTitleInNavigation(notice.title)
             tvNotice.text = notice.contents
             originalNoiceContents = notice.contents
         } else {
-            insertTitleInNavigation("제목을 설정해주세요")
+            insertTitleInNavigation("제목 없음")
             tvNotice.text = ""
         }
     }
