@@ -43,6 +43,7 @@ class DataManager {
         newNotice.title = title
         newNotice.contents = contents
         newNotice.insertDate = Date()
+        newNotice.views = 0
         
         // User Entity에 들어갈 관리 객체 생성
         let userObject = UserCD(context: mainContext)

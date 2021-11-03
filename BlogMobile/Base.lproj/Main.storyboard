@@ -103,6 +103,7 @@
                                     <outlet property="lblNumber" destination="el5-RO-fYR" id="taA-01-HwK"/>
                                     <outlet property="lblTitle" destination="31F-yf-1Pb" id="iJ0-g8-FoE"/>
                                     <outlet property="lblUser" destination="nrf-Y5-hhr" id="7Db-Mw-UuK"/>
+                                    <outlet property="lblViews" destination="Sqa-cs-8Mc" id="Svw-bo-TqE"/>
                                     <segue destination="WWy-U0-ANI" kind="show" id="8kj-LA-sAu"/>
                                 </connections>
                             </tableViewCell>

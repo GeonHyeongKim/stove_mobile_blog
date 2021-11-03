@@ -4,6 +4,7 @@
         <attribute name="contents" optional="YES" attributeType="String"/>
         <attribute name="insertDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="views" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="notice" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName="UserCD" syncable="YES" codeGenerationType="class">
@@ -12,7 +13,7 @@
         <relationship name="notice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notice" inverseName="user" inverseEntity="Notice"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="74"/>
-        <element name="Notice" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="User" positionX="-219.362548828125" positionY="-50.05438232421875" width="128" height="88"/>
+        <element name="Notice" positionX="192.3446655273438" positionY="-157.0066528320312" width="128" height="118"/>
     </elements>
 </model>

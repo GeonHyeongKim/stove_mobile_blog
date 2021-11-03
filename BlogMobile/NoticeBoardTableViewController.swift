@@ -49,6 +49,9 @@ class NoticeBoardTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
             if let vc = segue.destination as? DetailViewController {
+                let notice = DataManager.shared.noticeList[indexPath.row]
+                notice.views += 1   // 조회수 증가
+                DataManager.shared.saveContext()
                 vc.notice = DataManager.shared.noticeList[indexPath.row]
             }
         }
@@ -70,6 +73,7 @@ class NoticeBoardTableViewController: UITableViewController {
         cell.lblUser.text = target.user?.name
         numbering+=1
         cell.lblNumber.text = String(numbering)
+        cell.lblViews.text = "👀 \(target.views)"
         
         return cell
     }
