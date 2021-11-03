@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2QG-Cr-GLt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ULR-eD-ea0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -234,6 +234,70 @@
             </objects>
             <point key="canvasLocation" x="1519" y="642"/>
         </scene>
+        <!--Item 2-->
+        <scene sceneID="2PX-m9-qAk">
+            <objects>
+                <viewController id="OdU-fs-CMj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2gQ-2s-gUD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="d6S-Oh-2ZZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="4l7-xh-DQF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCo-uR-PhO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2470" y="1428"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="hZm-4A-djY">
+            <objects>
+                <viewController id="nHD-CC-2ik" customClass="MainViewController" customModule="BlogMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zUS-ld-8z3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gk3-XR-7Sw">
+                                <rect key="frame" x="173.5" y="432.5" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="2QG-Cr-GLt" kind="presentation" modalPresentationStyle="fullScreen" id="Kh5-SM-tlB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GRA-I0-kT9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gk3-XR-7Sw" firstAttribute="centerY" secondItem="zUS-ld-8z3" secondAttribute="centerY" id="aKc-tX-zf5"/>
+                            <constraint firstItem="gk3-XR-7Sw" firstAttribute="centerX" secondItem="zUS-ld-8z3" secondAttribute="centerX" id="yUp-Tj-xVb"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="aji-TE-ol2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LKa-IA-ay1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2470" y="818"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4Y5-tE-si9">
+            <objects>
+                <tabBarController id="ULR-eD-ea0" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Ga-di-mFw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nHD-CC-2ik" kind="relationship" relationship="viewControllers" id="oth-yY-ah8"/>
+                        <segue destination="OdU-fs-CMj" kind="relationship" relationship="viewControllers" id="MoS-x8-aoY"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="De9-54-0Tw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3362" y="1124"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="zxA-SC-gMK">
             <objects>
@@ -255,19 +319,19 @@
             <objects>
                 <viewController id="VXZ-CB-B37" customClass="WriteViewController" customModule="BlogMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dag-fE-U3h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hkV-05-5UF" userLabel="Tv Contents">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="847"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="793"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-Up-d4e">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="793" width="414" height="49"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="6r4-6M-o3Q">
                                         <color key="tintColor" systemColor="systemRedColor"/>
@@ -321,7 +385,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="An2-dn-YbW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yc5-mU-FOd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -335,7 +399,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4FM-2t-uc8"/>
+        <segue reference="b4K-R4-5pv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
