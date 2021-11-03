@@ -92,7 +92,7 @@ class WriteViewController: UIViewController {
             return
         }
         
-        guard let title = noticeTitle, title.count > 0 else {  // 제목이 입력되지 않았을 경우
+        guard let title = noticeTitle, title.count > 0, title != "제목 없음" else {  // 제목이 입력되지 않았을 경우
             alert(message: "제목을 입력해주세요")
             return
         }
