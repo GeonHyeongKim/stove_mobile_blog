@@ -10,6 +10,7 @@ import UIKit
 class WriteViewController: UIViewController {
 
     @IBOutlet weak var tvNotice: UITextView!
+    @IBOutlet weak var toolbar: UIToolbar!
     var editTarget: NoticeCD?
     var originalNoiceContents: String?
     var noticeTitle: String!
@@ -24,6 +25,7 @@ class WriteViewController: UIViewController {
         } else {
             insertTitleInNavigation("제목 없음")
             tvNotice.text = ""
+            toolbar.isHidden = true
         }
     }
     
@@ -93,10 +95,26 @@ class WriteViewController: UIViewController {
 
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func deleteNotice(_ sender: Any) {
+        let alert = UIAlertController(title: "알림", message: "삭제 확인", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] (action) in
+            DataManager.shared.deleteNotice(self?.editTarget)
+            self?.dismiss(animated: true, completion: nil)
+            NotificationCenter.default.post(name: WriteViewController.noticeDidDelete, object: nil)
+        }
+        
+        alert.addAction(okAction)
+        
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(cancleAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
-//MARK: - 새 글이 발생시 List update
+//MARK: - 글에 변동이 있을시 List update
 extension WriteViewController {
     static let newNoticeDidInsert = Notification.Name(rawValue: "newNoticeDidInsert")
     static let noticeDidChange = Notification.Name(rawValue: "noticeDidChange")
+    static let noticeDidDelete = Notification.Name(rawValue: "noticeDidDelete")
 }

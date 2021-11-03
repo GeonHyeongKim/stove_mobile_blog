@@ -57,6 +57,14 @@ class DataManager {
         saveContext()
     }
     
+    // 삭제 기능
+    func deleteNotice(_ notice: NoticeCD?) {
+        if let notice = notice {    // 실제로 notice가 전달될때만 실행
+            mainContext.delete(notice)
+            saveContext()
+        }
+    }
+    
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "BlogMobile")

@@ -99,8 +99,8 @@
 				579EB80227319AFA002A157C /* DetailViewController.swift */,
 				579EB7FB27313EBC002A157C /* WriteViewController.swift */,
 				579EB7DB27303B41002A157C /* Main.storyboard */,
-				579EB7E127303B43002A157C /* Assets.xcassets */,
 				579EB7E327303B43002A157C /* LaunchScreen.storyboard */,
+				579EB7E127303B43002A157C /* Assets.xcassets */,
 				579EB7E627303B43002A157C /* Info.plist */,
 			);
 			path = BlogMobile;

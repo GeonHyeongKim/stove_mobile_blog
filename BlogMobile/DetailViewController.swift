@@ -21,10 +21,15 @@ class DetailViewController: UIViewController {
         return format
     }()
     
-    var token: NSObjectProtocol? // 메모리 낭비를 줄임
+    // 메모리 낭비를 줄임
+    var didChangeToken: NSObjectProtocol?
+    var didDeleteToken: NSObjectProtocol?
     
     deinit { // 소멸자에서 해제
-        if let token = token {
+        if let token = didChangeToken {
+            NotificationCenter.default.removeObserver(token)
+        }
+        if let token = didDeleteToken {
             NotificationCenter.default.removeObserver(token)
         }
     }
@@ -32,8 +37,12 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        token = NotificationCenter.default.addObserver(forName: WriteViewController.noticeDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+        didChangeToken = NotificationCenter.default.addObserver(forName: WriteViewController.noticeDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
             self?.tvNotice.reloadData()
+        })
+        
+        didDeleteToken = NotificationCenter.default.addObserver(forName: WriteViewController.noticeDidDelete, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+            self?.navigationController?.popViewController(animated: true)
         })
     }
     
