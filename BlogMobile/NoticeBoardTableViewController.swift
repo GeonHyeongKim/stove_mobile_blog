@@ -46,6 +46,15 @@ class NoticeBoardTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
+    
+    // data 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            if let vc = segue.destination as? DetailViewController {
+                vc.notice = NoticeBoard.dummyNoticeBoardList[indexPath.row]
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -58,9 +67,9 @@ class NoticeBoardTableViewController: UITableViewController {
 
         // Configure the cell...
         let target = NoticeBoard.dummyNoticeBoardList[indexPath.row]
+        cell.lblTitle.text = target.title
         cell.lblDate.text = formatter.string(for: target.insertDate)
         cell.lblUser.text = target.user.name
-        cell.lblTitle.text = target.title
         
         return cell
     }
