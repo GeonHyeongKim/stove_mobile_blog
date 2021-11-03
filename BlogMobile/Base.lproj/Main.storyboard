@@ -263,7 +263,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="2QG-Cr-GLt" kind="presentation" modalPresentationStyle="fullScreen" id="Kh5-SM-tlB"/>
+                                    <segue destination="2QG-Cr-GLt" kind="presentation" customClass="SlideLeft" customModule="BlogMobile" customModuleProvider="target" modalPresentationStyle="fullScreen" id="Kh5-SM-tlB"/>
                                 </connections>
                             </button>
                         </subviews>
