@@ -81,10 +81,13 @@ class WriteViewController: UIViewController {
                 
         // 메모가 입력되었을 경우
         if let target = editTarget { // 편집
+            target.title = title
             target.contents = contents
             target.insertDate = Date()
+            DataManager.shared.saveContext()
             NotificationCenter.default.post(name: WriteViewController.noticeDidChange, object: nil)
         } else { // 새 메모
+            DataManager.shared.addNewNotice(title, contents)
             NotificationCenter.default.post(name: WriteViewController.newNoticeDidInsert, object: nil)
         }
 

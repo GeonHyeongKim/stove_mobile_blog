@@ -37,6 +37,25 @@ class DataManager {
         }
     }
     
+    // 새로운 Notice 생성
+    func addNewNotice(_ title: String?, _ contents: String?) {
+        let newNotice = NoticeCD(context: mainContext)
+        newNotice.title = title
+        newNotice.contents = contents
+        newNotice.insertDate = Date()
+        
+        // User Entity에 들어갈 관리 객체 생성
+        let userObject = UserCD(context: mainContext)
+        userObject.name = "iOS 개발자"
+        userObject.account = "test@gmail.com"
+        
+        newNotice.user = userObject
+        
+        // table reload
+        noticeList.insert(newNotice, at: 0) // 가장 처음에 입력
+        
+        saveContext()
+    }
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
