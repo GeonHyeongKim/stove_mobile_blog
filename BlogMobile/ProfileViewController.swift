@@ -43,6 +43,8 @@ class ProfileViewController: UIViewController {
         if let account = tfAccount.text {
             User.shared.account = account
         }
+        
+        alert(message: "저장되었습니다.")
     }
 }
 

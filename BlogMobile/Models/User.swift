@@ -11,5 +11,5 @@ struct User: Codable {
     var name: String
     var account: String
 
-    static var shared = User(name: "Stove iOS 개발자", account: "ios_developer")
+    static var shared = User(name: "Stove iOS 개발자", account: "stove_ios@gmail.com")
 }
