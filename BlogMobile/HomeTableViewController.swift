@@ -85,7 +85,11 @@ class HomeTableViewController: UITableViewController {
             cell.lblTitle.text = target.title
             cell.lblDate.text = formatter.string(for: target.insertDate)
             cell.lblUser.text = target.user?.name
-            cell.lblViews.text = "👀 \(target.views)"
+            guard let cntComment = DataManager.shared.noticeList[0].userComment?.allObjects.count else {
+                cell.lblViews.text = "👀 \(target.views) 💬 0"
+                return cell
+            }
+            cell.lblViews.text = "👀 \(target.views) 💬 \(cntComment)"
             return cell
         default:
             fatalError()

@@ -13,6 +13,7 @@ class DetailViewController: UIViewController, DetailInputTableDelegate {
     
     var indexNotice: Int?
     var notice: NoticeCD?
+    var commentList: [CommentCD]?
     
     let formatter: DateFormatter = { // Closures를 활용
         let format = DateFormatter()
@@ -51,6 +52,8 @@ class DetailViewController: UIViewController, DetailInputTableDelegate {
         didDeleteToken = NotificationCenter.default.addObserver(forName: WriteViewController.noticeDidDelete, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
             self?.navigationController?.popViewController(animated: true)
         })
+        
+        updateCommentList(index) // 댓글에 해당하는 값만 넣기
     }
     
     // 데이터 전달
@@ -60,12 +63,20 @@ class DetailViewController: UIViewController, DetailInputTableDelegate {
         }
     }
     
+    func updateCommentList(_ index: Int) {
+        commentList = notice?.userComment?.allObjects as? [CommentCD]
+        commentList?.sort{$0.insertDate! < $1.insertDate!}
+    }
+
 }
 
 //MARK: - TableVeiw DataSource
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4 + 1
+        guard let count = commentList?.count else {
+            return 4
+        }
+        return 4 + count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,13 +96,12 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailInputTableViewCell", for: indexPath) as! DetailInputTableViewCell
-//            cell.t.tag = indexNotice!
             cell.delegate = self
             return cell
-        case 4:
+        case 4...:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailComentTableViewCell", for: indexPath)
             cell.textLabel?.text = notice?.user?.name
-            cell.detailTextLabel?.text = notice?.userComment?.comment
+            cell.detailTextLabel?.text = commentList?[indexPath.row - 4].comment
             return cell
         default:
             fatalError()
@@ -106,7 +116,8 @@ extension DetailViewController: UITextFieldDelegate {
         guard let index = indexNotice else {
             return
         }
-        DataManager.shared.addComment(index, string)
+        self.notice = DataManager.shared.addComment(index, string)
+        updateCommentList(index)
         tvNotice.reloadData()
     }
 }

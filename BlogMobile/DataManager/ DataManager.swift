@@ -59,15 +59,16 @@ class DataManager {
     }
     
     // 새로운 Comment 생성
-    func addComment(_ index: Int, _ comment: String?) {
+    func addComment(_ index: Int, _ comment: String?) -> NoticeCD {
         let commentObject = CommentCD(context: mainContext)
         commentObject.comment = comment
         commentObject.name = User.shared.name
+        commentObject.noticeNum = Int32(index)
         commentObject.insertDate = Date()
-        
-        noticeList[index].userComment = commentObject
-        
+                
+        noticeList[index].mutableSetValue(forKey: "userComment").addObjects(from: [commentObject])
         saveContext()
+        return noticeList[index]
     }
     
     // 삭제 기능

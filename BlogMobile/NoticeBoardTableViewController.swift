@@ -74,7 +74,11 @@ class NoticeBoardTableViewController: UITableViewController {
         cell.lblUser.text = target.user?.name
         numbering+=1
         cell.lblNumber.text = String(numbering)
-        cell.lblViews.text = "👀 \(target.views)"
+        guard let cntComment = DataManager.shared.noticeList[indexPath.row].userComment?.allObjects.count else {
+            cell.lblViews.text = "👀 \(target.views) 💬 0"
+            return cell
+        }
+        cell.lblViews.text = "👀 \(target.views) 💬 \(cntComment)"
         
         return cell
     }

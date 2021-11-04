@@ -4,6 +4,7 @@
         <attribute name="comment" optional="YES" attributeType="String"/>
         <attribute name="insertDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="noticeNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="userComment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notice" inverseName="userComment" inverseEntity="Notice"/>
     </entity>
     <entity name="Notice" representedClassName="NoticeCD" syncable="YES" codeGenerationType="class">
@@ -12,7 +13,7 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="views" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="notice" inverseEntity="User"/>
-        <relationship name="userComment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comment" inverseName="userComment" inverseEntity="Comment"/>
+        <relationship name="userComment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="userComment" inverseEntity="Comment"/>
     </entity>
     <entity name="User" representedClassName="UserCD" syncable="YES" codeGenerationType="class">
         <attribute name="account" optional="YES" attributeType="String"/>
@@ -20,7 +21,7 @@
         <relationship name="notice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notice" inverseName="user" inverseEntity="Notice"/>
     </entity>
     <elements>
-        <element name="Comment" positionX="-297" positionY="90" width="128" height="89"/>
+        <element name="Comment" positionX="-297" positionY="90" width="128" height="104"/>
         <element name="Notice" positionX="-450.832763671875" positionY="57.29083251953125" width="128" height="119"/>
         <element name="User" positionX="-219.362548828125" positionY="-50.05438232421875" width="128" height="88"/>
     </elements>
