@@ -2,7 +2,7 @@
 //  NoticeBoardListTableViewCell.swift
 //  BlogMobile
 //
-//  Created by gunhyeong on 2021/11/02.
+//  Created by gunhyeong on 2021/11/04.
 //
 
 import UIKit
@@ -24,5 +24,5 @@ class NoticeBoardListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

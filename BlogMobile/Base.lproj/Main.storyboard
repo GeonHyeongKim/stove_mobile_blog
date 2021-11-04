@@ -4,7 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -101,11 +101,11 @@
                                 </tableViewCellContentView>
                                 <viewLayoutGuide key="safeArea" id="Blg-9d-PWN"/>
                                 <connections>
-                                    <outlet property="lblDate" destination="hXy-aI-k2d" id="0Mb-ji-Ytg"/>
-                                    <outlet property="lblNumber" destination="el5-RO-fYR" id="taA-01-HwK"/>
-                                    <outlet property="lblTitle" destination="31F-yf-1Pb" id="iJ0-g8-FoE"/>
-                                    <outlet property="lblUser" destination="nrf-Y5-hhr" id="7Db-Mw-UuK"/>
-                                    <outlet property="lblViews" destination="Sqa-cs-8Mc" id="Svw-bo-TqE"/>
+                                    <outlet property="lblDate" destination="hXy-aI-k2d" id="IsW-6x-fht"/>
+                                    <outlet property="lblNumber" destination="el5-RO-fYR" id="qZ3-GA-2wk"/>
+                                    <outlet property="lblTitle" destination="31F-yf-1Pb" id="Hqs-oa-t2V"/>
+                                    <outlet property="lblUser" destination="nrf-Y5-hhr" id="UXB-4z-cMP"/>
+                                    <outlet property="lblViews" destination="Sqa-cs-8Mc" id="iBF-IV-Lyf"/>
                                     <segue destination="WWy-U0-ANI" kind="show" id="8kj-LA-sAu"/>
                                 </connections>
                             </tableViewCell>
@@ -398,49 +398,59 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeSelectTableViewCell" id="5mF-7y-lgs">
-                                <rect key="frame" x="0.0" y="144.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeSelectTableViewCell" id="5mF-7y-lgs" customClass="HomeSelectTableViewCell" customModule="BlogMobile" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="144.5" width="414" height="54.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5mF-7y-lgs" id="gOq-It-1qe">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" id="Fq1-kv-O34">
-                                            <rect key="frame" x="0.0" y="6" width="414" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbT-ZQ-gBN" userLabel="btnMail">
-                                                    <rect key="frame" x="0.0" y="0.0" width="138" height="31"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="news" imagePadding="5">
-                                                        <imageReference key="image" image="mail" catalog="system" symbolScale="default"/>
-                                                    </buttonConfiguration>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-9M-6AV" userLabel="btnMail">
-                                                    <rect key="frame" x="138" y="0.0" width="138" height="31"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="news" imagePadding="5">
-                                                        <imageReference key="image" image="mail" catalog="system" symbolScale="default"/>
-                                                    </buttonConfiguration>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3V3-cc-PqN">
-                                                    <rect key="frame" x="276" y="0.0" width="138" height="31"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                    <connections>
-                                                        <segue destination="yD1-1J-4XI" kind="show" id="9pp-QU-nd9"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="8Nh-9M-6AV" firstAttribute="centerX" secondItem="Fq1-kv-O34" secondAttribute="centerX" id="PIO-FD-xJq"/>
-                                            </constraints>
-                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYz-HB-YjC" userLabel="Btn News">
+                                            <rect key="frame" x="20" y="11.5" width="84" height="32"/>
+                                            <color key="backgroundColor" name="AccentColor"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="contentEdgeInsets" minX="15" minY="5" maxX="15" maxY="5"/>
+                                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="Mail" image="paperplane" catalog="system"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaA-M8-wQR" userLabel="Btn Notice">
+                                            <rect key="frame" x="114" y="11" width="101" height="32.5"/>
+                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="contentEdgeInsets" minX="15" minY="5" maxX="15" maxY="5"/>
+                                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Notice" image="doc" catalog="system">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="yD1-1J-4XI" kind="show" id="Wu1-45-82h"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jaA-M8-wQR" firstAttribute="centerY" secondItem="BYz-HB-YjC" secondAttribute="centerY" id="C5Y-6k-DIG"/>
+                                        <constraint firstItem="BYz-HB-YjC" firstAttribute="leading" secondItem="gOq-It-1qe" secondAttribute="leading" constant="20" id="IS5-X5-TEA"/>
+                                        <constraint firstItem="jaA-M8-wQR" firstAttribute="top" secondItem="gOq-It-1qe" secondAttribute="topMargin" id="Qvt-SG-lPL"/>
+                                        <constraint firstItem="jaA-M8-wQR" firstAttribute="leading" secondItem="BYz-HB-YjC" secondAttribute="trailing" constant="10" id="RZt-CT-p96"/>
+                                        <constraint firstItem="BYz-HB-YjC" firstAttribute="centerY" secondItem="gOq-It-1qe" secondAttribute="centerY" id="ZKI-dh-n6W"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jaA-M8-wQR" secondAttribute="trailing" constant="20" id="trK-aW-76l"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeBannerTableViewCell" rowHeight="200" id="sUh-zC-z4m">
-                                <rect key="frame" x="0.0" y="188" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="199" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sUh-zC-z4m" id="1nS-ep-VpE">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -502,11 +512,15 @@
         <segue reference="4FM-2t-uc8"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="doc" catalog="system" width="115" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="mail" catalog="system" width="128" height="93"/>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -515,6 +529,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
