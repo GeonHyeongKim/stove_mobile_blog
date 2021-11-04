@@ -104,8 +104,7 @@
 				576C50FA27326FA600C9E702 /* DataManager */,
 				579EB7FF27317623002A157C /* Extensions */,
 				579EB7EC27311082002A157C /* Models */,
-				57D8BAF22733F238001B3FF1 /* Collection Cell */,
-				579EB7FA273120F5002A157C /* Table Cell */,
+				57D8BAF72733F35F001B3FF1 /* Cell */,
 				579EB7F427311970002A157C /* NoticeBoardTableViewController.swift */,
 				579EB80227319AFA002A157C /* DetailViewController.swift */,
 				570D2F4927338FEC009794A2 /* HomeTableViewController.swift */,
@@ -152,6 +151,15 @@
 				57D8BAF52733F2F5001B3FF1 /* BannerCollectionViewCell.swift */,
 			);
 			path = "Collection Cell";
+			sourceTree = "<group>";
+		};
+		57D8BAF72733F35F001B3FF1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				57D8BAF22733F238001B3FF1 /* Collection Cell */,
+				579EB7FA273120F5002A157C /* Table Cell */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
