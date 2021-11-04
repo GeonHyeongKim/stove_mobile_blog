@@ -39,7 +39,7 @@ class DetailViewController: UIViewController, DetailInputTableDelegate, DetailDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         guard let index = indexNotice else {
             return
         }
@@ -63,10 +63,14 @@ class DetailViewController: UIViewController, DetailInputTableDelegate, DetailDe
             return
         }
         if account != User.shared.account {
-            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.setRightBarButton(nil, animated: true)
+        } else {
+            let rightButton = UIBarButtonItem(title: "수정", style: .plain, target: self, action: #selector(editNotice))
+            self.navigationItem.rightBarButtonItem = rightButton
         }
-//        print(account)
-//        print(User.shared.account)
+        
+        print(account)
+        print(User.shared.account)
         tvNotice.reloadData()
     }
     
@@ -87,7 +91,11 @@ class DetailViewController: UIViewController, DetailInputTableDelegate, DetailDe
         DataManager.shared.deleteComment(deleteCommentCD)
         tvNotice.reloadData()
     }
-
+    
+    @objc func editNotice() {
+        self.performSegue(withIdentifier: "editSegue", sender: self)
+    }
+    
 }
 
 //MARK: - TableVeiw DataSource
