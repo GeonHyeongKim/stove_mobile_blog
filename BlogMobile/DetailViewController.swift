@@ -53,14 +53,20 @@ class DetailViewController: UIViewController, DetailInputTableDelegate, DetailDe
             self?.navigationController?.popViewController(animated: true)
         })
         
-        // 본인만 수정가능
-        if notice?.user?.account != User.shared.account {
-            self.navigationItem.rightBarButtonItem = nil
-        }
         updateCommentList(index) // 댓글에 해당하는 값만 넣기
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // 본인만 수정가능
+        guard let account = notice?.user?.account! else {
+            tvNotice.reloadData()
+            return
+        }
+        if account != User.shared.account {
+            self.navigationItem.rightBarButtonItem = nil
+        }
+        print(account)
+        print(User.shared.account)
         tvNotice.reloadData()
     }
     
@@ -101,7 +107,7 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeUserTableViewCell", for: indexPath)
-            cell.textLabel?.text = notice?.user?.name
+            cell.textLabel?.text = "\(notice?.user?.name ?? "")\n(\(notice?.user?.account ?? ""))"
             cell.detailTextLabel?.text = formatter.string(from: notice?.insertDate ?? Date())
             return cell
         case 2:
@@ -115,7 +121,7 @@ extension DetailViewController: UITableViewDataSource {
         case 4...:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailComentTableViewCell", for: indexPath) as! DetailComentTableViewCell
             let target = (commentList?[indexPath.row - 4])! as CommentCD
-            cell.lblUser.text = "\(target.name ?? "")(\(target.name ?? ""))"
+            cell.lblUser.text = "\(target.name ?? "")(\(target.account ?? ""))"
             cell.lblComent?.text = target.comment
             cell.btnDelete.tag = indexPath.row
             cell.delegate = self
