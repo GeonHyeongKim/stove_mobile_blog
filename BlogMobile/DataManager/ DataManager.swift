@@ -80,6 +80,14 @@ class DataManager {
         }
     }
     
+    // 댓글 삭제 기능
+    func deleteComment(_ comment: CommentCD?) {
+        if let comment = comment {    // 실제로 comment가 전달될때만 실행
+            mainContext.delete(comment)
+            saveContext()
+        }
+    }
+    
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "BlogMobile")

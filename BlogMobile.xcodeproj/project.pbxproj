@@ -28,6 +28,7 @@
 		57D8BAF62733F2F5001B3FF1 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8BAF52733F2F5001B3FF1 /* BannerCollectionViewCell.swift */; };
 		57D8BAF92733F815001B3FF1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8BAF82733F815001B3FF1 /* ProfileViewController.swift */; };
 		57D8BB0127342190001B3FF1 /* DetailInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8BB0027342190001B3FF1 /* DetailInputTableViewCell.swift */; };
+		57D8BB0327345456001B3FF1 /* DetailComentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8BB0227345455001B3FF1 /* DetailComentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		57D8BAF52733F2F5001B3FF1 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		57D8BAF82733F815001B3FF1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		57D8BB0027342190001B3FF1 /* DetailInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInputTableViewCell.swift; sourceTree = "<group>"; };
+		57D8BB0227345455001B3FF1 /* DetailComentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailComentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				570D2F4D2733A2D0009794A2 /* NoticeBoardListTableViewCell.swift */,
 				57335AE52733B9D90070AF0A /* HomeBannerTableViewCell.swift */,
 				57D8BB0027342190001B3FF1 /* DetailInputTableViewCell.swift */,
+				57D8BB0227345455001B3FF1 /* DetailComentTableViewCell.swift */,
 			);
 			path = "Table Cell";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				579EB7FE27317620002A157C /* UIViewController+Alert.swift in Sources */,
 				57D8BB0127342190001B3FF1 /* DetailInputTableViewCell.swift in Sources */,
 				579EB7F527311970002A157C /* NoticeBoardTableViewController.swift in Sources */,
+				57D8BB0327345456001B3FF1 /* DetailComentTableViewCell.swift in Sources */,
 				579EB7D627303B41002A157C /* AppDelegate.swift in Sources */,
 				570D2F4A27338FEC009794A2 /* HomeTableViewController.swift in Sources */,
 				57D8BAF62733F2F5001B3FF1 /* BannerCollectionViewCell.swift in Sources */,

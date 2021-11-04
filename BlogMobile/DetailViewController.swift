@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, DetailInputTableDelegate {
+class DetailViewController: UIViewController, DetailInputTableDelegate, DetailDeleteCommentTableDelegate {
     
     @IBOutlet weak var tvNotice: UITableView!
     
@@ -53,11 +53,15 @@ class DetailViewController: UIViewController, DetailInputTableDelegate {
             self?.navigationController?.popViewController(animated: true)
         })
         
-        // 본인인만 수정가능
+        // 본인만 수정가능
         if notice?.user?.account != User.shared.account {
             self.navigationItem.rightBarButtonItem = nil
         }
         updateCommentList(index) // 댓글에 해당하는 값만 넣기
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tvNotice.reloadData()
     }
     
     // 데이터 전달
@@ -70,6 +74,12 @@ class DetailViewController: UIViewController, DetailInputTableDelegate {
     func updateCommentList(_ index: Int) {
         commentList = notice?.userComment?.allObjects as? [CommentCD]
         commentList?.sort{$0.insertDate! < $1.insertDate!}
+    }
+    
+    func deleteComment(cell: DetailComentTableViewCell, index: Int) {
+        let deleteCommentCD = commentList?.remove(at: index - 4)
+        DataManager.shared.deleteComment(deleteCommentCD)
+        tvNotice.reloadData()
     }
 
 }
@@ -103,9 +113,16 @@ extension DetailViewController: UITableViewDataSource {
             cell.delegate = self
             return cell
         case 4...:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "detailComentTableViewCell", for: indexPath)
-            cell.textLabel?.text = commentList?[indexPath.row - 4].name
-            cell.detailTextLabel?.text = commentList?[indexPath.row - 4].comment
+            let cell = tableView.dequeueReusableCell(withIdentifier: "detailComentTableViewCell", for: indexPath) as! DetailComentTableViewCell
+            let target = (commentList?[indexPath.row - 4])! as CommentCD
+            cell.lblUser.text = "\(target.name ?? "")(\(target.name ?? ""))"
+            cell.lblComent?.text = target.comment
+            cell.btnDelete.tag = indexPath.row
+            cell.delegate = self
+            
+            if User.shared.account == target.comment { // 본인이 아닐경우
+                cell.btnDelete.isHidden = true
+            }
             return cell
         default:
             fatalError()

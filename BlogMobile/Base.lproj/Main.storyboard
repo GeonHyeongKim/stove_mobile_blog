@@ -230,29 +230,66 @@
                                             <outlet property="tfInputComment" destination="oqe-nf-wdr" id="uHG-YL-YLB"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailComentTableViewCell" textLabel="TUG-xL-QHA" detailTextLabel="Atg-Te-89o" rowHeight="54" style="IBUITableViewCellStyleSubtitle" id="CFF-da-IVF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailComentTableViewCell" rowHeight="54" id="CFF-da-IVF" customClass="DetailComentTableViewCell" customModule="BlogMobile" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="209" width="414" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CFF-da-IVF" id="wqg-l2-YGG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TUG-xL-QHA">
-                                                    <rect key="frame" x="20" y="11" width="59.5" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="coment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Atg-Te-89o">
-                                                    <rect key="frame" x="20" y="27.5" width="39.5" height="13.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjQ-Up-AHU" userLabel="lblUser">
+                                                    <rect key="frame" x="20" y="11" width="53.5" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScY-Bl-auB" userLabel="lblComent">
+                                                    <rect key="frame" x="20" y="24.5" width="28.5" height="13.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCa-Wn-AI3">
+                                                    <rect key="frame" x="379" y="19.5" width="15" height="15"/>
+                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="15" id="P4C-W5-4mm"/>
+                                                        <constraint firstAttribute="height" constant="15" id="W3Z-1A-dcT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="2"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="xmark" catalog="system"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="deleteComment:" destination="CFF-da-IVF" eventType="touchUpInside" id="J8B-De-c2K"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ScY-Bl-auB" firstAttribute="top" secondItem="xjQ-Up-AHU" secondAttribute="bottom" id="0g7-mj-6JY"/>
+                                                <constraint firstItem="WCa-Wn-AI3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xjQ-Up-AHU" secondAttribute="trailing" constant="8" symbolic="YES" id="0oD-pt-aqb"/>
+                                                <constraint firstItem="WCa-Wn-AI3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ScY-Bl-auB" secondAttribute="trailing" constant="8" symbolic="YES" id="MPp-Mu-3Pv"/>
+                                                <constraint firstItem="xjQ-Up-AHU" firstAttribute="top" secondItem="wqg-l2-YGG" secondAttribute="topMargin" id="eTw-of-W0d"/>
+                                                <constraint firstItem="xjQ-Up-AHU" firstAttribute="leading" secondItem="wqg-l2-YGG" secondAttribute="leadingMargin" id="ntP-aH-cJa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="WCa-Wn-AI3" secondAttribute="trailing" id="nzB-m3-DJH"/>
+                                                <constraint firstItem="ScY-Bl-auB" firstAttribute="leading" secondItem="xjQ-Up-AHU" secondAttribute="leading" id="xiM-hc-DNI"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="WCa-Wn-AI3" firstAttribute="centerY" secondItem="CFF-da-IVF" secondAttribute="centerY" id="e9E-ND-Plf"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="btnDelete" destination="WCa-Wn-AI3" id="xSp-Py-cQg"/>
+                                            <outlet property="lblComent" destination="ScY-Bl-auB" id="fXq-CW-UMo"/>
+                                            <outlet property="lblUser" destination="xjQ-Up-AHU" id="NkO-Xh-zyv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -751,7 +788,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="b4K-R4-5pv"/>
-        <segue reference="8kj-LA-sAu"/>
+        <segue reference="W9g-yB-toW"/>
         <segue reference="ZxF-it-WkN"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -762,6 +799,7 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
