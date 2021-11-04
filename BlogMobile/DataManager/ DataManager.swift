@@ -6,14 +6,13 @@
 //
 
 import Foundation
-
 import CoreData
 
 class DataManager {
     static let shared = DataManager()
     private init() {
-        
     }
+    
     // Context : Core Data를 관리
     var mainContext: NSManagedObjectContext {
         return persistentContainer.viewContext

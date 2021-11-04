@@ -7,5 +7,6 @@ target 'BlogMobile' do
 
   # Pods for BlogMobile
   pod 'Firebase/Database'
+  pod 'Kingfisher', '6.3.1'
 
 end

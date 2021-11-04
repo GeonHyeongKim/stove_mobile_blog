@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Kingfisher
+
+protocol SendBannerTableDelegate: AnyObject {
+    func sendBannerCell(cell: BannerCollectionViewCell, index:Int) -> [Card]
+}
 
 class HomeBannerTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var cvBanner: UICollectionView!
     
+    weak var delegate: SendBannerTableDelegate?
     var banners = Banner.dummyBannerList
+    var cards = [Card]()
     var timer = Timer()
     var counter = 0
 
@@ -46,11 +54,14 @@ class HomeBannerTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
 
     // MARK: - Collection View DataSource, Delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Banner.dummyBannerList.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeBannerCollectionViewCell", for: indexPath) as! BannerCollectionViewCell
+        self.cards = delegate?.sendBannerCell(cell: cell, index: indexPath.row) ?? []
+        let imageURL = URL(string: cards[indexPath.row].bannerImageURL)
+        cell.ivBanner.kf
         cell.ivBanner.image = UIImage(named: banners[indexPath.row].imageName)
         return cell
     }

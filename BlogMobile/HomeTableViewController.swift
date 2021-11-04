@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: UITableViewController, SendBannerTableDelegate {
     
     @IBOutlet var tvHome: UITableView!
+    var ref: DatabaseReference!     // Firebase Realtime Database
+    var banners = [Card]()
     
     let formatter: DateFormatter = { // Closures를 활용
         let format = DateFormatter()
@@ -22,6 +25,24 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Firebase Database 읽기
+        self.ref = Database.database().reference()
+        self.ref.observe(.value) { snapshot in
+            guard let value = snapshot.value as? [String: [String: Any]] else { return }
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: value)
+                let bannerData = try JSONDecoder().decode([String: Card].self, from: jsonData)
+                let bannerList = Array(bannerData.values)
+                self.banners = bannerList.sorted { $0.rank < $1.rank }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            } catch let error {
+                print("Error json parsing \(error)")
+            }
+        }
         
     }
     
@@ -46,6 +67,10 @@ class HomeTableViewController: UITableViewController {
         }
     }
     
+    func sendBannerCell(cell: BannerCollectionViewCell, index:Int) -> [Card] {
+        return banners
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,6 +90,7 @@ class HomeTableViewController: UITableViewController {
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "homeBannerTableViewCell", for: indexPath) as! HomeBannerTableViewCell
             cell.cvBanner.reloadData()
+            cell.delegate = self
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "homeNoticeTitleTableViewCell", for: indexPath)

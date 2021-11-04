@@ -10,12 +10,12 @@ import Foundation
 struct Banner {
     var text: String
     var imageName: String
-    
+
     init(text: String, imageName: String) {
         self.text = text
         self.imageName = imageName
     }
-    
+
     static var dummyBannerList = [
         Banner(text: "1", imageName: "coffee"),
         Banner(text: "1", imageName: "coffee"),
@@ -24,4 +24,12 @@ struct Banner {
         Banner(text: "1", imageName: "coffee"),
         Banner(text: "1", imageName: "coffee")
     ]
+}
+
+struct Card: Codable {
+    let id: Int
+    let rank: Int
+    let name: String
+    let bannerImageURL: String
+    let isSelected: Bool?
 }
