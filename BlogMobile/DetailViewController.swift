@@ -65,8 +65,8 @@ class DetailViewController: UIViewController, DetailInputTableDelegate, DetailDe
         if account != User.shared.account {
             self.navigationItem.rightBarButtonItem = nil
         }
-        print(account)
-        print(User.shared.account)
+//        print(account)
+//        print(User.shared.account)
         tvNotice.reloadData()
     }
     
@@ -126,7 +126,7 @@ extension DetailViewController: UITableViewDataSource {
             cell.btnDelete.tag = indexPath.row
             cell.delegate = self
             
-            if User.shared.account == target.comment { // 본인이 아닐경우
+            if User.shared.account != target.account { // 본인이 아닐경우
                 cell.btnDelete.isHidden = true
             }
             return cell
