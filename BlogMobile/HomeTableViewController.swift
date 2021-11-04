@@ -29,9 +29,10 @@ class HomeTableViewController: UITableViewController {
         DataManager.shared.fetchNotice()
         tableView.reloadData()
     }
-    
+        
     // data 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         guard let target = DataManager.shared.noticeList.first else {
             return
         }
