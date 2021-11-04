@@ -7,9 +7,11 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, DetailInputTableDelegate {
     
     @IBOutlet weak var tvNotice: UITableView!
+    
+    var indexNotice: Int?
     var notice: NoticeCD?
     
     let formatter: DateFormatter = { // Closures를 활용
@@ -36,6 +38,11 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let index = indexNotice else {
+            return
+        }
+        indexNotice = index
         
         didChangeToken = NotificationCenter.default.addObserver(forName: WriteViewController.noticeDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
             self?.tvNotice.reloadData()
@@ -77,7 +84,9 @@ extension DetailViewController: UITableViewDataSource {
             cell.textLabel?.text = notice?.contents
             return cell
         case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "detailInputTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "detailInputTableViewCell", for: indexPath) as! DetailInputTableViewCell
+//            cell.t.tag = indexNotice!
+            cell.delegate = self
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailComentTableViewCell", for: indexPath)
@@ -87,5 +96,17 @@ extension DetailViewController: UITableViewDataSource {
         default:
             fatalError()
         }
+    }
+}
+
+//MARK: - UITextFieldDelegate
+
+extension DetailViewController: UITextFieldDelegate {
+    func didReturn(cell: DetailInputTableViewCell, string: String?) {
+        guard let index = indexNotice else {
+            return
+        }
+        DataManager.shared.addComment(index, string)
+        tvNotice.reloadData()
     }
 }

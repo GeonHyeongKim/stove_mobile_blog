@@ -40,6 +40,7 @@ class HomeTableViewController: UITableViewController {
             notice.views += 1   // 조회수 증가
             DataManager.shared.saveContext()
             vc.notice = target
+            vc.indexNotice = 0
         }
     }
     

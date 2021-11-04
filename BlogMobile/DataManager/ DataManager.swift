@@ -58,6 +58,18 @@ class DataManager {
         saveContext()
     }
     
+    // 새로운 Comment 생성
+    func addComment(_ index: Int, _ comment: String?) {
+        let commentObject = CommentCD(context: mainContext)
+        commentObject.comment = comment
+        commentObject.name = User.shared.name
+        commentObject.insertDate = Date()
+        
+        noticeList[index].userComment = commentObject
+        
+        saveContext()
+    }
+    
     // 삭제 기능
     func deleteNotice(_ notice: NoticeCD?) {
         if let notice = notice {    // 실제로 notice가 전달될때만 실행

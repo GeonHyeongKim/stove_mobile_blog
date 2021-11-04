@@ -227,7 +227,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="tfInputComent" destination="oqe-nf-wdr" id="z5k-9C-wcZ"/>
+                                            <outlet property="tfInputComment" destination="oqe-nf-wdr" id="uHG-YL-YLB"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailComentTableViewCell" textLabel="TUG-xL-QHA" detailTextLabel="Atg-Te-89o" rowHeight="54" style="IBUITableViewCellStyleSubtitle" id="CFF-da-IVF">
@@ -751,7 +751,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="b4K-R4-5pv"/>
-        <segue reference="W9g-yB-toW"/>
+        <segue reference="8kj-LA-sAu"/>
         <segue reference="ZxF-it-WkN"/>
     </inferredMetricsTieBreakers>
     <resources>

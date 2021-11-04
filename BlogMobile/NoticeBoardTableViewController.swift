@@ -53,6 +53,7 @@ class NoticeBoardTableViewController: UITableViewController {
                 notice.views += 1   // 조회수 증가
                 DataManager.shared.saveContext()
                 vc.notice = DataManager.shared.noticeList[indexPath.row]
+                vc.indexNotice = indexPath.row // // 댓글 기능을 위해 추가
             }
         }
     }
