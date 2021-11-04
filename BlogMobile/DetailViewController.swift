@@ -136,6 +136,8 @@ extension DetailViewController: UITableViewDataSource {
             
             if User.shared.account != target.account { // 본인이 아닐경우
                 cell.btnDelete.isHidden = true
+            } else {
+                cell.btnDelete.isHidden = false
             }
             return cell
         default:
