@@ -484,7 +484,7 @@
                                                     </collectionViewCellContentView>
                                                     <size key="customSize" width="414" height="202"/>
                                                     <connections>
-                                                        <outlet property="ivBanner" destination="UPN-wv-js0" id="0MG-Vq-8OW"/>
+                                                        <outlet property="ivBanner" destination="UPN-wv-js0" id="gni-OU-Adr"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
