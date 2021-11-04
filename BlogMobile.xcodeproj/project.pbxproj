@@ -26,6 +26,8 @@
 		579EB7FE27317620002A157C /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7FD27317620002A157C /* UIViewController+Alert.swift */; };
 		579EB80327319AFA002A157C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB80227319AFA002A157C /* DetailViewController.swift */; };
 		57D8BAF62733F2F5001B3FF1 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8BAF52733F2F5001B3FF1 /* BannerCollectionViewCell.swift */; };
+		57D8BAF92733F815001B3FF1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8BAF82733F815001B3FF1 /* ProfileViewController.swift */; };
+		57D8BAFB2733F87B001B3FF1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8BAFA2733F87B001B3FF1 /* ProfilePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		579EB7FD27317620002A157C /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		579EB80227319AFA002A157C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		57D8BAF52733F2F5001B3FF1 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		57D8BAF82733F815001B3FF1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		57D8BAFA2733F87B001B3FF1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				579EB80227319AFA002A157C /* DetailViewController.swift */,
 				570D2F4927338FEC009794A2 /* HomeTableViewController.swift */,
 				579EB7FB27313EBC002A157C /* WriteViewController.swift */,
+				57D8BAF82733F815001B3FF1 /* ProfileViewController.swift */,
+				57D8BAFA2733F87B001B3FF1 /* ProfilePresenter.swift */,
 				579EB7DB27303B41002A157C /* Main.storyboard */,
 				579EB7E327303B43002A157C /* LaunchScreen.storyboard */,
 				579EB7E127303B43002A157C /* Assets.xcassets */,
@@ -240,12 +246,14 @@
 				579EB7D627303B41002A157C /* AppDelegate.swift in Sources */,
 				570D2F4A27338FEC009794A2 /* HomeTableViewController.swift in Sources */,
 				57D8BAF62733F2F5001B3FF1 /* BannerCollectionViewCell.swift in Sources */,
+				57D8BAF92733F815001B3FF1 /* ProfileViewController.swift in Sources */,
 				579EB7F027311167002A157C /* User.swift in Sources */,
 				579EB7D827303B41002A157C /* SceneDelegate.swift in Sources */,
 				576C50F927326F9D00C9E702 /*  DataManager.swift in Sources */,
 				57335AE72733B9D90070AF0A /* HomeBannerTableViewCell.swift in Sources */,
 				579EB7E027303B41002A157C /* BlogMobile.xcdatamodeld in Sources */,
 				579EB7FC27313EBC002A157C /* WriteViewController.swift in Sources */,
+				57D8BAFB2733F87B001B3FF1 /* ProfilePresenter.swift in Sources */,
 				57335AE22733B5660070AF0A /* Banner.swift in Sources */,
 				570D2F4E2733A2D1009794A2 /* NoticeBoardListTableViewCell.swift in Sources */,
 				579EB7EE2731114B002A157C /* NoticeBoard.swift in Sources */,

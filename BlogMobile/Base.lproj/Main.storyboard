@@ -234,23 +234,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bq9-JS-eXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1407" y="1171"/>
+            <point key="canvasLocation" x="2315.9420289855075" y="1170.5357142857142"/>
         </scene>
-        <!--Other-->
+        <!--Profile-->
         <scene sceneID="2PX-m9-qAk">
             <objects>
-                <viewController id="OdU-fs-CMj" sceneMemberID="viewController">
+                <viewController id="OdU-fs-CMj" customClass="ProfileViewController" customModule="BlogMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gQ-2s-gUD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="이름" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="En7-se-lpN">
+                                <rect key="frame" x="16" y="104" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="stove_ios@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZu-ed-fBS">
+                                <rect key="frame" x="16" y="154" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkI-Nw-VlA">
+                                <rect key="frame" x="16" y="204" width="382" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="저장하기"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="save:" destination="OdU-fs-CMj" eventType="touchUpInside" id="2A8-ot-IHU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="d6S-Oh-2ZZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZkI-Nw-VlA" firstAttribute="trailing" secondItem="En7-se-lpN" secondAttribute="trailing" id="GCz-SJ-xod"/>
+                            <constraint firstItem="FZu-ed-fBS" firstAttribute="top" secondItem="En7-se-lpN" secondAttribute="bottom" constant="16" id="J6p-Sg-e7u"/>
+                            <constraint firstItem="FZu-ed-fBS" firstAttribute="trailing" secondItem="En7-se-lpN" secondAttribute="trailing" id="Tci-Xz-eke"/>
+                            <constraint firstItem="En7-se-lpN" firstAttribute="leading" secondItem="d6S-Oh-2ZZ" secondAttribute="leading" constant="16" id="YmJ-7T-zTY"/>
+                            <constraint firstItem="En7-se-lpN" firstAttribute="top" secondItem="d6S-Oh-2ZZ" secondAttribute="top" constant="16" id="dj5-4N-Y9O"/>
+                            <constraint firstItem="ZkI-Nw-VlA" firstAttribute="leading" secondItem="En7-se-lpN" secondAttribute="leading" id="lqb-W6-NAk"/>
+                            <constraint firstItem="ZkI-Nw-VlA" firstAttribute="top" secondItem="FZu-ed-fBS" secondAttribute="bottom" constant="16" id="sJH-yi-irL"/>
+                            <constraint firstItem="FZu-ed-fBS" firstAttribute="leading" secondItem="En7-se-lpN" secondAttribute="leading" id="uHH-A0-Dlk"/>
+                            <constraint firstItem="d6S-Oh-2ZZ" firstAttribute="trailing" secondItem="En7-se-lpN" secondAttribute="trailing" constant="16" id="x6G-Ze-fXl"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Other" image="person" catalog="system" selectedImage="person.fill" id="4l7-xh-DQF"/>
+                    <navigationItem key="navigationItem" title="Profile" id="2PR-sL-6hc"/>
+                    <connections>
+                        <outlet property="btnSave" destination="ZkI-Nw-VlA" id="QK5-Sr-zcY"/>
+                        <outlet property="tfAccount" destination="FZu-ed-fBS" id="ejB-ds-Han"/>
+                        <outlet property="tfName" destination="En7-se-lpN" id="I5g-eg-dfP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCo-uR-PhO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1594" y="1124"/>
+            <point key="canvasLocation" x="-710.14492753623199" y="1131.6964285714284"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4Y5-tE-si9">
@@ -263,7 +309,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="uL8-kq-nq2" kind="relationship" relationship="viewControllers" id="oth-yY-ah8"/>
-                        <segue destination="OdU-fs-CMj" kind="relationship" relationship="viewControllers" id="MoS-x8-aoY"/>
+                        <segue destination="pXY-KP-H4c" kind="relationship" relationship="viewControllers" id="MoS-x8-aoY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="De9-54-0Tw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -275,11 +321,11 @@
             <objects>
                 <viewController id="VXZ-CB-B37" customClass="WriteViewController" customModule="BlogMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dag-fE-U3h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hkV-05-5UF" userLabel="Tv Contents">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="847"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="793"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -287,7 +333,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-Up-d4e">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="793" width="414" height="49"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="6r4-6M-o3Q">
                                         <color key="tintColor" systemColor="systemRedColor"/>
@@ -341,7 +387,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="An2-dn-YbW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yc5-mU-FOd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -635,9 +681,28 @@
             </objects>
             <point key="canvasLocation" x="-700" y="375.66964285714283"/>
         </scene>
+        <!--Other-->
+        <scene sceneID="uNB-ln-OQb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pXY-KP-H4c" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="Other" image="person" catalog="system" selectedImage="person.fill" id="4l7-xh-DQF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y2I-q7-B6W">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OdU-fs-CMj" kind="relationship" relationship="rootViewController" id="yia-RJ-M9A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bp-II-WDg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1620.289855072464" y="1131.6964285714284"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4FM-2t-uc8"/>
+        <segue reference="b4K-R4-5pv"/>
         <segue reference="W9g-yB-toW"/>
         <segue reference="ZxF-it-WkN"/>
     </inferredMetricsTieBreakers>
@@ -660,6 +725,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
