@@ -11,7 +11,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var tvNotice: UITableView!
     var notice: NoticeCD?
-
+    
     let formatter: DateFormatter = { // Closures를 활용
         let format = DateFormatter()
         format.dateStyle = .long
@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         didChangeToken = NotificationCenter.default.addObserver(forName: WriteViewController.noticeDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
             self?.tvNotice.reloadData()
         })
@@ -52,39 +52,16 @@ class DetailViewController: UIViewController {
             vc.editTarget = notice
         }
     }
-
+    
 }
 
 //MARK: - TableVeiw DataSource
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == tvNotice {
-            return 3
-        } else {
-            return 1
-        }
+        return 4 + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == tvNotice {
-            switch indexPath.row {
-            case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeTitleTableViewCell", for: indexPath)
-                cell.textLabel?.text = notice?.title
-                return cell
-            case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeUserTableViewCell", for: indexPath)
-                cell.textLabel?.text = notice?.user?.name
-                cell.detailTextLabel?.text = formatter.string(from: notice?.insertDate ?? Date())
-                return cell
-            case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeContentsTableViewCell", for: indexPath)
-                cell.textLabel?.text = notice?.contents
-                return cell
-            default:
-                fatalError()
-            }
-        }
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeTitleTableViewCell", for: indexPath)
@@ -98,6 +75,14 @@ extension DetailViewController: UITableViewDataSource {
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeContentsTableViewCell", for: indexPath)
             cell.textLabel?.text = notice?.contents
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "detailInputTableViewCell", for: indexPath)
+            return cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "detailComentTableViewCell", for: indexPath)
+            cell.textLabel?.text = notice?.user?.name
+            cell.detailTextLabel?.text = notice?.userComment?.comment
             return cell
         default:
             fatalError()

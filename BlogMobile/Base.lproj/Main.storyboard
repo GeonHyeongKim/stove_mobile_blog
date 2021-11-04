@@ -206,6 +206,54 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailInputTableViewCell" id="W33-Vw-5MG" customClass="DetailInputTableViewCell" customModule="BlogMobile" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="174.5" width="414" height="34.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W33-Vw-5MG" id="B3h-3b-AFQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="34.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="공개 댓글 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oqe-nf-wdr">
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="34.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oqe-nf-wdr" firstAttribute="leading" secondItem="B3h-3b-AFQ" secondAttribute="leading" constant="10" id="Fa8-wC-TYc"/>
+                                                <constraint firstAttribute="bottom" secondItem="oqe-nf-wdr" secondAttribute="bottom" id="Tb0-to-k25"/>
+                                                <constraint firstItem="oqe-nf-wdr" firstAttribute="top" secondItem="B3h-3b-AFQ" secondAttribute="top" id="ltC-vt-AvL"/>
+                                                <constraint firstAttribute="trailing" secondItem="oqe-nf-wdr" secondAttribute="trailing" constant="10" id="tzb-5z-ov3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tfInputComent" destination="oqe-nf-wdr" id="z5k-9C-wcZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailComentTableViewCell" textLabel="TUG-xL-QHA" detailTextLabel="Atg-Te-89o" rowHeight="54" style="IBUITableViewCellStyleSubtitle" id="CFF-da-IVF">
+                                        <rect key="frame" x="0.0" y="209" width="414" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CFF-da-IVF" id="wqg-l2-YGG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TUG-xL-QHA">
+                                                    <rect key="frame" x="20" y="11" width="59.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="coment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Atg-Te-89o">
+                                                    <rect key="frame" x="20" y="27.5" width="39.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="WWy-U0-ANI" id="VVs-9u-pMb"/>
@@ -216,7 +264,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vZT-ZL-yr3" secondAttribute="trailing" id="Ifu-1l-9Lo"/>
-                            <constraint firstItem="AF4-r5-tRU" firstAttribute="bottom" secondItem="vZT-ZL-yr3" secondAttribute="bottom" id="JVA-Wn-zDO"/>
+                            <constraint firstItem="AF4-r5-tRU" firstAttribute="bottom" secondItem="vZT-ZL-yr3" secondAttribute="bottom" id="KKZ-2v-vOy"/>
                             <constraint firstItem="vZT-ZL-yr3" firstAttribute="top" secondItem="1nE-ku-TiG" secondAttribute="top" id="LhF-AI-tdQ"/>
                             <constraint firstItem="vZT-ZL-yr3" firstAttribute="leading" secondItem="1nE-ku-TiG" secondAttribute="leading" id="h7f-go-k4s"/>
                         </constraints>
