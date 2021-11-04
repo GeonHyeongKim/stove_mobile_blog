@@ -58,10 +58,33 @@ class DetailViewController: UIViewController {
 //MARK: - TableVeiw DataSource
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if tableView == tvNotice {
+            return 3
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == tvNotice {
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeTitleTableViewCell", for: indexPath)
+                cell.textLabel?.text = notice?.title
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeUserTableViewCell", for: indexPath)
+                cell.textLabel?.text = notice?.user?.name
+                cell.detailTextLabel?.text = formatter.string(from: notice?.insertDate ?? Date())
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeContentsTableViewCell", for: indexPath)
+                cell.textLabel?.text = notice?.contents
+                return cell
+            default:
+                fatalError()
+            }
+        }
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailNoticeTitleTableViewCell", for: indexPath)
