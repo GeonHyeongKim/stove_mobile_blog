@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570D2F4A27338FEC009794A2 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D2F4927338FEC009794A2 /* HomeTableViewController.swift */; };
 		576C50F927326F9D00C9E702 /*  DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576C50F827326F9D00C9E702 /*  DataManager.swift */; };
-		576C50FF2732AFDA00C9E702 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576C50FE2732AFDA00C9E702 /* MainViewController.swift */; };
 		576C51042732B11B00C9E702 /* UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576C51032732B11B00C9E702 /* UIStoryboardSegue.swift */; };
+		576C51062732BDE900C9E702 /* CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576C51052732BDE900C9E702 /* CoffeeMenu.swift */; };
+		576C51082732D4A200C9E702 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576C51072732D4A200C9E702 /* Content.swift */; };
 		579EB7D627303B41002A157C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7D527303B41002A157C /* AppDelegate.swift */; };
 		579EB7D827303B41002A157C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579EB7D727303B41002A157C /* SceneDelegate.swift */; };
 		579EB7DD27303B41002A157C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579EB7DB27303B41002A157C /* Main.storyboard */; };
@@ -26,9 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570D2F4927338FEC009794A2 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		576C50F827326F9D00C9E702 /*  DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DataManager.swift"; sourceTree = "<group>"; };
-		576C50FE2732AFDA00C9E702 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		576C51032732B11B00C9E702 /* UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegue.swift; sourceTree = "<group>"; };
+		576C51052732BDE900C9E702 /* CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMenu.swift; sourceTree = "<group>"; };
+		576C51072732D4A200C9E702 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		579EB7D227303B41002A157C /* BlogMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		579EB7D527303B41002A157C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		579EB7D727303B41002A157C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,13 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		576C510B2732D69D00C9E702 /* Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Collection Cell";
+			sourceTree = "<group>";
+		};
 		579EB7C927303B41002A157C = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +109,11 @@
 				576C50FA27326FA600C9E702 /* DataManager */,
 				579EB7FF27317623002A157C /* Extensions */,
 				579EB7EC27311082002A157C /* Models */,
+				576C510B2732D69D00C9E702 /* Collection Cell */,
 				579EB7FA273120F5002A157C /* Table Cell */,
-				576C50FE2732AFDA00C9E702 /* MainViewController.swift */,
 				579EB7F427311970002A157C /* NoticeBoardTableViewController.swift */,
 				579EB80227319AFA002A157C /* DetailViewController.swift */,
+				570D2F4927338FEC009794A2 /* HomeTableViewController.swift */,
 				579EB7FB27313EBC002A157C /* WriteViewController.swift */,
 				579EB7DB27303B41002A157C /* Main.storyboard */,
 				579EB7E327303B43002A157C /* LaunchScreen.storyboard */,
@@ -116,6 +128,8 @@
 			children = (
 				579EB7ED2731114B002A157C /* NoticeBoard.swift */,
 				579EB7EF27311167002A157C /* User.swift */,
+				576C51072732D4A200C9E702 /* Content.swift */,
+				576C51052732BDE900C9E702 /* CoffeeMenu.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,11 +224,13 @@
 			files = (
 				579EB80327319AFA002A157C /* DetailViewController.swift in Sources */,
 				576C51042732B11B00C9E702 /* UIStoryboardSegue.swift in Sources */,
+				576C51062732BDE900C9E702 /* CoffeeMenu.swift in Sources */,
 				579EB7FE27317620002A157C /* UIViewController+Alert.swift in Sources */,
 				579EB7F527311970002A157C /* NoticeBoardTableViewController.swift in Sources */,
-				576C50FF2732AFDA00C9E702 /* MainViewController.swift in Sources */,
 				579EB7F8273120E7002A157C /* NoticeBoardListTableViewCell.swift in Sources */,
 				579EB7D627303B41002A157C /* AppDelegate.swift in Sources */,
+				576C51082732D4A200C9E702 /* Content.swift in Sources */,
+				570D2F4A27338FEC009794A2 /* HomeTableViewController.swift in Sources */,
 				579EB7F027311167002A157C /* User.swift in Sources */,
 				579EB7D827303B41002A157C /* SceneDelegate.swift in Sources */,
 				576C50F927326F9D00C9E702 /*  DataManager.swift in Sources */,
