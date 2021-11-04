@@ -78,6 +78,9 @@ class HomeTableViewController: UITableViewController {
                 return cell
             }
             
+            cell.lblDate.isHidden = false
+            cell.lblUser.isHidden = false
+            cell.lblViews.isHidden = false
             cell.lblTitle.text = target.title
             cell.lblDate.text = formatter.string(for: target.insertDate)
             cell.lblUser.text = target.user?.name
