@@ -32,10 +32,11 @@ class HomeTableViewController: UITableViewController {
     
     // data 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let target = DataManager.shared.noticeList.first else {
+            return
+        }
+        
         if let vc = segue.destination as? DetailViewController {
-            guard let target = DataManager.shared.noticeList.first else {
-                return
-            }
             let notice = target
             notice.views += 1   // 조회수 증가
             DataManager.shared.saveContext()

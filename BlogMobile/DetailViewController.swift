@@ -39,7 +39,7 @@ class DetailViewController: UIViewController, DetailInputTableDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         guard let index = indexNotice else {
             return
         }
@@ -100,7 +100,7 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         case 4...:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailComentTableViewCell", for: indexPath)
-            cell.textLabel?.text = notice?.user?.name
+            cell.textLabel?.text = commentList?[indexPath.row - 4].name
             cell.detailTextLabel?.text = commentList?[indexPath.row - 4].comment
             return cell
         default:

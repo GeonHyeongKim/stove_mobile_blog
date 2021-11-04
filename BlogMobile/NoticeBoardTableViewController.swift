@@ -43,6 +43,7 @@ class NoticeBoardTableViewController: UITableViewController {
         numbering = 0
         DataManager.shared.fetchNotice()
         tableView.reloadData()
+        print(User.shared.name)
     }
     
     // data 전달
