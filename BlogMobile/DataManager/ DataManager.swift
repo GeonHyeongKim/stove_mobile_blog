@@ -63,6 +63,7 @@ class DataManager {
         let commentObject = CommentCD(context: mainContext)
         commentObject.comment = comment
         commentObject.name = User.shared.name
+        commentObject.account = User.shared.account
         commentObject.noticeNum = Int32(index)
         commentObject.insertDate = Date()
                 

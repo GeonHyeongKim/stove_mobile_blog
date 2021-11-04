@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Comment" representedClassName="CommentCD" syncable="YES" codeGenerationType="class">
+        <attribute name="account" optional="YES" attributeType="String"/>
         <attribute name="comment" optional="YES" attributeType="String"/>
         <attribute name="insertDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -21,7 +22,7 @@
         <relationship name="notice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notice" inverseName="user" inverseEntity="Notice"/>
     </entity>
     <elements>
-        <element name="Comment" positionX="-297" positionY="90" width="128" height="104"/>
+        <element name="Comment" positionX="-297" positionY="90" width="128" height="119"/>
         <element name="Notice" positionX="-450.832763671875" positionY="57.29083251953125" width="128" height="119"/>
         <element name="User" positionX="-219.362548828125" positionY="-50.05438232421875" width="128" height="88"/>
     </elements>

@@ -53,6 +53,10 @@ class DetailViewController: UIViewController, DetailInputTableDelegate {
             self?.navigationController?.popViewController(animated: true)
         })
         
+        // 본인인만 수정가능
+        if notice?.user?.account != User.shared.account {
+            self.navigationItem.rightBarButtonItem = nil
+        }
         updateCommentList(index) // 댓글에 해당하는 값만 넣기
     }
     
